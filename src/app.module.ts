@@ -9,13 +9,14 @@ import { APP_GUARD } from '@nestjs/core';
 import { AuthModule } from './auth/auth.module';
 import { RoleGuard } from './auth/role/role.guard';
 
+
 @Module({
 
   imports: [MongooseModule.forRoot(
-    'mongodb+srv://bhagithatechie:VdJ211ZXGurld9Jt@cluster0.ujuydyt.mongodb.net/LilacTestDb?retryWrites=true&w=majority'),
+    process.env.DB_HOST_URL),
     UserModule, MovieModule, AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
