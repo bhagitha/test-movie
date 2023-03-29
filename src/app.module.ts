@@ -13,10 +13,10 @@ import { RoleGuard } from './auth/role/role.guard';
 @Module({
 
   imports: [MongooseModule.forRoot(
-    process.env.DB_HOST_URL),
+    'mongodb+srv://bhagithatechie:VdJ211ZXGurld9Jt@cluster0.ujuydyt.mongodb.net/LilacTestDb?retryWrites=true&w=majority'),
     UserModule, MovieModule, AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}
